@@ -21,7 +21,7 @@ class App extends Component {
       intermediateResult: newArr,
     });
   };
-  deleteItem = (item, index) => {
+  deleteItem = (index) => {
     const intermediateResult = [...this.state.intermediateResult];
 
     intermediateResult.splice(index, 1);
@@ -83,7 +83,7 @@ class App extends Component {
               return (
                 <ul key={index} className={classes.intermediateResult}>
                   {index + 1} )
-                  <li onClick={() => this.deleteItem(index, index)}>{item}</li>
+                  <li onClick={() => this.deleteItem(index)}>{item}</li>
                 </ul>
               );
             })}
