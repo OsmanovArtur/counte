@@ -13,24 +13,19 @@ class App extends Component {
       results: results + this.state.results,
     });
   };
-  ShowIntermediateResult = () => {
-    const results = this.state.results;
-    const newArr = [results];
-    const intermediateResult = [...this.state.intermediateResult, ...newArr];
+  showIntermediateResult = () => {
+    const newArr = [...this.state.intermediateResult];
+    newArr.push(this.state.results);
+
     this.setState({
-      intermediateResult,
+      intermediateResult: newArr,
     });
   };
-
-  deleteItem = (number) => {
+  deleteItem = (item, index) => {
     const newArr = this.state.intermediateResult;
-    const intermediateResult = newArr.filter((item) => {
-      if (item === number) {
-        return false;
-      } else {
-        return true;
-      }
-    });
+
+    newArr.splice(index, 1);
+    const intermediateResult = newArr;
 
     this.setState({ intermediateResult });
   };
@@ -82,14 +77,14 @@ class App extends Component {
           </Button>
           <h1> Результат:{this.state.results}</h1>
           <div>
-            <h2 onClick={this.ShowIntermediateResult}>
+            <h2 onClick={this.showIntermediateResult}>
               Промежуточный результат:
             </h2>
             {this.state.intermediateResult.map((item, index) => {
               return (
                 <ul key={index} className={classes.intermediateResult}>
                   {index + 1} )
-                  <li onClick={() => this.deleteItem(item)}>{item}</li>
+                  <li onClick={() => this.deleteItem(index, index)}>{item}</li>
                 </ul>
               );
             })}
