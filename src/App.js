@@ -22,10 +22,9 @@ class App extends Component {
     });
   };
   deleteItem = (item, index) => {
-    const newArr = this.state.intermediateResult;
+    const intermediateResult = [...this.state.intermediateResult];
 
-    newArr.splice(index, 1);
-    const intermediateResult = newArr;
+    intermediateResult.splice(index, 1);
 
     this.setState({ intermediateResult });
   };
