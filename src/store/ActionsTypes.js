@@ -1,0 +1,6 @@
+export const ADD = "ADD";
+export const INTERMEDIATE_RESULT = "INTERMEDIATE_RESULT";
+export const DELETE_ITEM = "DELETE_ITEM";
+export const ADD1 = "ADD1";
+export const INTERMEDIATE_RESULT1 = "INTERMEDIATE_RESULT1";
+export const DELETE_ITEM1 = "DELETE_ITEM1";

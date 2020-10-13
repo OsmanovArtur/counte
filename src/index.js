@@ -5,7 +5,7 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
 import { createStore, compose } from "redux";
-import reducer from "../src/constant/reducers/Reduser";
+import reducer from "./store/reducers/Reduser";
 
 const composeEnhancers =
   (typeof window !== "undefined" &&
